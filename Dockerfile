@@ -5,8 +5,7 @@ MAINTAINER Fiona Schmidtke "fionaschmidtke@web.de"
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN echo "deb http://archive.ubuntu.com/ubuntu/ precise universe" >> /etc/apt/sources.list
-RUN apt-get update
-RUN apt-get -y install perl tar wget curl openjdk-7-jre-headless
+RUN apt-get update && apt-get -y install perl tar wget curl openjdk-7-jre-headless
 
 RUN mkdir /opt/fuseki
 ADD script/download-fuseki.sh /opt/fuseki/download-fuseki.sh
